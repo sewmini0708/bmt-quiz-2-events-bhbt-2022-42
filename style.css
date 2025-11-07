@@ -18,3 +18,22 @@ body {
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
+
+.social-icons {
+  margin-top: 1.5rem;
+}
+
+.social-icons a {
+  color: #333;
+  font-size: 1.8rem; /* Made icons a bit larger */
+  margin: 0 12px;
+  text-decoration: none;
+  display: inline-block; /* Important for transformations */
+  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.social-icons a:hover {
+  /* Animation: scale up and change color */
+  transform: translateY(-5px) scale(1.2);
+  color: #007bff; /* A nice blue, but you can choose any color */
+}
