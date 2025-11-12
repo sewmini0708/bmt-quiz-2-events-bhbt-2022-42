@@ -62,3 +62,6 @@ h2 {
 .social-icons a:hover {
   color: #0056b3;
 }
+img {
+  border-radius: 50%;
+}
