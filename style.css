@@ -1,39 +1,64 @@
+/* Basic body styling */
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  line-height: 1.6;
-  background-color: #f4f4f4;
-  color: #ff7d7d;
+  font-family: 'Arial', sans-serif;
   margin: 0;
-  padding: 20px;
+  padding: 0;
+  background-color: #f4f4f4;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  text-align: center;
+  color: #333;
 }
 
+/* Container for the main content */
 .container {
-  background: hsl(0, 65%, 47%);
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(246, 24, 24, 0.1);
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 600px;
+  width: 90%;
 }
 
+/* Profile photo styling */
+.profile-photo {
+  width: 150px; /* Adjust size as needed */
+  height: 150px; /* Should be equal to width for a perfect circle */
+  border-radius: 50%; /* Makes the image circular */
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+  margin-bottom: 20px;
+  border: 4px solid #007bff; /* Optional: add a border */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Heading styles */
+h1 {
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+h2 {
+  color: #555;
+  margin-top: 0;
+  margin-bottom: 25px;
+}
+
+/* Social icons styling */
 .social-icons {
-  margin-top: 1.5rem;
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Space between icons */
 }
 
 .social-icons a {
-  color: #333;
-  font-size: 1.8rem; /* Made icons a bit larger */
-  margin: 0 12px;
-  text-decoration: none;
-  display: inline-block; /* Important for transformations */
-  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+  color: #007bff;
+  font-size: 30px;
+  transition: color 0.3s ease;
 }
 
 .social-icons a:hover {
-  /* Animation: scale up and change color */
-  transform: translateY(-5px) scale(1.2);
-  color: #007bff; /* A nice blue, but you can choose any color */
+  color: #0056b3;
 }
