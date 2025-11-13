@@ -1,67 +1,177 @@
-/* Basic body styling */
+/* Level 1: Custom Font and Color Scheme */
+:root {
+    --primary-color: #3f51b5; /* Indigo */
+    --secondary-color: #ff9800; /* Amber */
+    --background-light: #f4f4f9;
+    --card-background: #ffffff;
+    --text-color: #333333;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
-  font-family: 'Arial', sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f4f4f4;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  color: #333;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background-light);
+    color: var(--text-color);
+    line-height: 1.6;
+    padding-top: 60px; /* Space for fixed header if implemented */
 }
 
-/* Container for the main content */
-.container {
-  background-color: #fff;
-  padding: 40px;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  max-width: 600px;
-  width: 90%;
+/* Header Styling */
+.main-header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 2rem 1rem;
+    text-align: center;
+    box-shadow: 0 4px 6px var(--shadow-color);
 }
 
-/* Profile photo styling */
-.profile-photo {
-  width: 150px; /* Adjust size as needed */
-  height: 150px; /* Should be equal to width for a perfect circle */
-  border-radius: 50%; /* Makes the image circular */
-  object-fit: cover; /* Ensures the image covers the area without distortion */
-  margin-bottom: 20px;
-  border: 4px solid #007bff; /* Optional: add a border */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+.main-header h1 {
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 0.5rem;
 }
 
-/* Heading styles */
-h1 {
-  color: #cf8918;
-  margin-bottom: 10px;
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-h2 {
-  color: #555;
-  margin-top: 0;
-  margin-bottom: 25px;
+/* --- Core Requirement: Responsive Grid Layout --- */
+.event-grid {
+    display: grid;
+    gap: 20px;
+    padding: 20px 0;
 }
 
-/* Social icons styling */
-.social-icons {
-  margin-top: 30px;
-  display: flex;
-  justify-content: center;
-  gap: 20px; /* Space between icons */
+/* Mobile Layout: Single Column */
+@media (max-width: 767px) {
+    .event-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
-.social-icons a {
-  color: #007bff;
-  font-size: 30px;
-  transition: color 0.3s ease;
+/* Desktop Layout: Multi-column Grid (3 columns) */
+@media (min-width: 768px) {
+    .event-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
-.social-icons a:hover {
-  color: #0056b3;
+/* --- Card Styling (Level 1 Polished UI) --- */
+.event-card {
+    background-color: var(--card-background);
+    border-radius: 10px;
+    overflow: hidden;
+    /* Level 1: Subtle box-shadow */
+    box-shadow: 0 4px 8px var(--shadow-color);
+    /* Level 1: Transition for smooth hover effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-img {
-  border-radius: 50%;
+
+.event-card:hover {
+    /* Level 1: Lift effect on hover */
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.event-image-container {
+    height: 180px;
+    overflow: hidden;
+}
+
+.event-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 15px;
+}
+
+.card-content h2 {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.card-content p {
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+}
+
+.event-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    color: #666;
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+}
+
+.event-type {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.event-date-time {
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+/* --- Level 2: Filter Controls Styling --- */
+.filter-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.filter-btn {
+    padding: 10px 15px;
+    border: 2px solid var(--primary-color);
+    border-radius: 20px;
+    background-color: transparent;
+    color: var(--primary-color);
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, transform 0.2s;
+}
+
+.filter-btn:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.filter-btn.active {
+    background-color: var(--primary-color);
+    color: white;
+    box-shadow: 0 3px 6px var(--shadow-color);
+}
+
+/* Footer Styling */
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 30px;
+    font-size: 0.85rem;
+}
+
+/* Utility Class for Filtering */
+.hidden {
+    display: none !important;
 }

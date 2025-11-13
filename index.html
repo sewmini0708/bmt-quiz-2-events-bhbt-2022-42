@@ -1,32 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Portfolio</title>
-  <!-- Add Font Awesome for social media icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechCon 2025 Event Schedule</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
-  <div class="container">
-    <img src="sewmini.jpg" alt="Ruwanthika Sewmini Profile Picture" class="profile-photo">
-    <h1>Ruwanthika Sewmini</h1>
-    
-    <h2>Personal Portfolio – Coming Soon</h2>
-    <p>This site will show my future web projects.</p>
-    <p>I'm undergraduate in gampaha wickckramarachchi university of indegenous medicine </p>
+
+    <header class="main-header">
+        <h1>🚀 TechCon 2025 Event Showcase</h1>
+        <p>A look at the upcoming sessions in AI, Web Development, and Cybersecurity.</p>
+    </header>
+
     <main>
-      <section>about me</section>
-      <section>project</section>
-      <section>contact</section>
+        <section class="filter-controls">
+            <button class="filter-btn active" data-filter="all">All Events</button>
+            <button class="filter-btn" data-filter="Keynote">Keynotes</button>
+            <button class="filter-btn" data-filter="Talk">Talks</button>
+            <button class="filter-btn" data-filter="Workshop">Workshops</button>
+            <button class="filter-btn" data-filter="Panel">Panels</button>
+            <button class="filter-btn" data-filter="Social">Social</button>
+        </section>
+
+        <section id="event-container" class="event-grid">
+            </section>
     </main>
-    <div class="social-icons">
-      <a href="#" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-      <a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-      <a href="#" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-    </div>
-  </div>
-  <script src="script.js"></script>
+
+    <footer>
+        <p>&copy; 2025 TechCon. All rights reserved. Developed for BMT Quiz 2.</p>
+    </footer>
+
+    <script src="scripts/main.js"></script>
 </body>
 </html>
