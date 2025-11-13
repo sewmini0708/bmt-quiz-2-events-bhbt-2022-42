@@ -4,19 +4,19 @@ const events = [
     title: "Opening Keynote: The Future of AI",
     date: "2025-11-20T09:00:00",
     description: "Join Dr. Evelyn Reed as she discusses upcoming breakthroughs in Artificial Intelligence.",
-    image: "images/keynote.jpg"
+    image: "pic1.jpg"
   },
   {
     title: "Advanced JavaScript Workshop",
     date: "2025-11-20T11:00:00",
     description: "A hands-on session exploring ES6+, Promises, and async programming.",
-    image: "meet.jpg"
+    image: "pic2.jpg"
   },
   {
     title: "Cybersecurity in 2025",
     date: "2025-11-21T10:00:00",
     description: "Learn about the latest cybersecurity trends and defense strategies.",
-    image: "images/cyber.jpg"
+    image: "pic3.jpg"
   }
 ];
 
