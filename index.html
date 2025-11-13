@@ -4,17 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TechCon 2025 Event Schedule</title>
+    <!-- Level 1: Linking Google Fonts for a polished UI -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header class="main-header">
-        <h1>🚀 TechCon 2025 Event Showcase</h1>
-        <p>A look at the upcoming sessions in AI, Web Development, and Cybersecurity.</p>
+        <div class="header-content">
+            <h1>🚀 TechCon 2025 Event Showcase</h1>
+            <p>Explore the upcoming sessions in AI, Web Development, and Cybersecurity.</p>
+        </div>
+        <!-- Level 3: Dark Mode Toggle -->
+        <div class="theme-switcher-wrapper">
+            <label for="theme-switcher" class="theme-switcher">
+                <input type="checkbox" id="theme-switcher">
+                <div class="slider"></div>
+            </label>
+        </div>
     </header>
 
     <main>
+        <!-- Level 2: Filter controls for event types -->
         <section class="filter-controls">
             <button class="filter-btn active" data-filter="all">All Events</button>
             <button class="filter-btn" data-filter="Keynote">Keynotes</button>
@@ -24,14 +35,16 @@
             <button class="filter-btn" data-filter="Social">Social</button>
         </section>
 
+        <!-- Core Requirement: Container for dynamically generated event cards -->
         <section id="event-container" class="event-grid">
-            </section>
+            <!-- Event cards will be dynamically inserted here by JavaScript -->
+        </section>
     </main>
 
     <footer>
         <p>&copy; 2025 TechCon. All rights reserved. Developed for BMT Quiz 2.</p>
     </footer>
 
-    <script src="scripts/main.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

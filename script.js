@@ -1,5 +1,5 @@
 const events = [
-    // --- Day 1: Nov 20, 2025 ---
+const events = [
     {
         title: "Opening Keynote: The Future of AI",
         type: "Keynote",
@@ -109,7 +109,6 @@ const events = [
         description: "An open Q&A session with a panel of the conference's top speakers. No topic is off-limits!",
         image: "images/panel-ama.jpg"
     },
-    // The rest of the events are in the array but omitted here for brevity
     {
         title: "Pre-Conference Hackathon",
         type: "Social",
@@ -160,14 +159,14 @@ function formatEventDateTime(dateTimeString) {
 // Core Requirement: Function to dynamically generate event cards
 function renderEventCards(eventArray) {
     const container = document.getElementById('event-container');
-    // Clear existing content before rendering new cards
+    // Clear existing content to prevent duplication when filtering
     container.innerHTML = ''; 
 
     eventArray.forEach(event => {
         // Create the card element
         const card = document.createElement('div');
         card.classList.add('event-card');
-        // Add a class based on type for easy filtering later
+        // Use a data attribute for type, which is good practice for JS hooks
         card.dataset.eventType = event.type;
 
         // Populate the card HTML structure using template literals
@@ -183,6 +182,8 @@ function renderEventCards(eventArray) {
                     <span class="event-type">${event.type}</span>
                     <span class="event-date-time">${formatEventDateTime(event.date)}</span>
                 </div>
+                <!-- Level 5: Add to Calendar Button -->
+                <a href="${calendarLink}" target="_blank" rel="noopener noreferrer" class="add-to-calendar">Add to Calendar</a>
             </div>
         `;
 
@@ -216,9 +217,12 @@ function setupEventListeners() {
 
 // Initializing the application
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Render all events on page load
-    renderEventCards(events); 
+    // 1. Sort events by date to ensure they appear in chronological order
+    const sortedEvents = events.sort((a, b) => new Date(a.date) - new Date(b.date));
+
+    // 2. Render all events on initial page load
+    renderEventCards(sortedEvents); 
     
-    // 2. Setup filter functionality (Level 2)
+    // 3. Setup filter functionality (Level 2)
     setupEventListeners();
 });
